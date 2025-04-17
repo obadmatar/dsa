@@ -40,7 +40,7 @@ func (ll *Singly[T]) Prepend(val T) {
 
 // Get returns node value at the given index
 func (ll *Singly[T]) Get(index int) (T, bool) {
-	if !ll.withinRage(index) {
+	if !ll.withinRange(index) {
 		var t T
 		return t, false
 	}
@@ -55,7 +55,7 @@ func (ll *Singly[T]) Get(index int) (T, bool) {
 
 // Remove removes node value at the given index
 func (ll *Singly[T]) Remove(index int) {
-	if !ll.withinRage(index) {
+	if !ll.withinRange(index) {
 		return
 	}
 
@@ -114,6 +114,6 @@ func (ll *Singly[T]) Size() int {
 }
 
 // withinRange checks that index is within list size
-func (ll *Singly[T]) withinRage(index int) bool {
+func (ll *Singly[T]) withinRange(index int) bool {
 	return index >= 0 && index < ll.size
 }
