@@ -96,7 +96,7 @@ func (ll *Singly[T]) Contains(val T) bool {
 
 // Values returns all values in the list
 func (ll *Singly[T]) Values() []T {
-	values := make([]T, ll.size, ll.size)
+	values := make([]T, ll.size)
 	for i, n := 0, ll.head; n != nil; i, n = i+1, n.next {
 		values[i] = n.val
 	}
